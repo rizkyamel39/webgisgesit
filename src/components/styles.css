@@ -1,0 +1,92 @@
+/* styles.css */
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .cards {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  label {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    perspective: 1000px;
+  }
+  
+  label input {
+    display: none;
+  }
+  
+  label .card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+  }
+  
+  label input:checked + .card {
+    transform: rotateY(180deg);
+  }
+  
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #c2f9ff;
+    text-align: center;
+  }
+  
+  .back {
+    transform: rotateY(180deg);
+  }
+  
+  .card .front header h2, .card .back header h2 {
+    font-size: 1.5rem; /* Resize for the card name */
+    margin: 0;
+  }
+  
+  .card .front h3 {
+    font-size: 1.2rem; /* Resize for the card description */
+    margin: 0.5rem 0;
+  }
+  
+  .card .front h4 {
+    font-size: 1rem; /* Resize for the card footer */
+    margin: 0.5rem 0;
+    font-weight: normal;
+  }
+  
+  .card .front p {
+    font-size: 0.9rem; /* Resize for the additional text */
+    margin: 0.5rem 0;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  var {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  

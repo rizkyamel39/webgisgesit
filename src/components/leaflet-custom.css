@@ -1,0 +1,47 @@
+.leaflet-control-layers-toggle {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAQAAAADQ4RFAAACf0lEQVR4AY1UM3gkARTePdvdoTxXKc+qTl3aU5U6b2Kbkz3Gtq3Zw6ziLGNPzrYx7946Tr6/ee/XeCQ4D3ykPtL5tHno4n0d/h3+xfuWHGLX81cn7r0iTNfMZWAv8mkjgzJ3rMOV7fX+h8eadB517zv34zdLa8Tb8mHvBfyxAPIGHEVR5jTKzB4iaYQOwK2qCoyqxl/MLJnT8dVSDcv8zC5gb7BX9rpEwMJdD4crd283qHxvwO3KMTY+Gw4XCbWUocDLXlhbjORmgBSFtUAXe2Mj2u4UID3GbaxZmu5yQVQnPOk2OihRWPInMOBcJsLV/JYXsgTK2Zlkiz1GJ8MQhfRgTd9V7z14DxD8Bnxk+nOl9RAJAOAHvDmhXGkWDj/l/YV9j6fjS0CwAHIgDzEA3nMYs0ncLsOBZnwLTBLdk81+bx3FJ3IC4F4wAggWGIIsAAgcAUJAOQGJA0BwAEygyIcaAACtgAAiQIwEGQ4IIYwHAaAhAIEAIQAAQAoC8iiCoQE4tBGIKAqEYsWB0BhiWCaWgZoKhghAJ4BAwZEKSYS7IXDgQzpDMIiQIQGAwkGhO1AGdkQgDIAFBh0hBgAOGhAGiIAN4gCkQYBIIJCQkIYQgSAEIQFwNIgHCCAwAAwUACawABYQEABxAACohSQkBAAWWAAJsABsKCCR0ECAEADgQAQMAh0QAACQtLSUBIAACQIALAAATCQoKAQAOLCgoTMABsABDoCBm4iKCQoQAwAIABA0DCQAEAgAsLC0mAAsABRjYGiECAIuACQKDQwFBAocCAoGRjIAEW0IBAYQdXV1EQAAZQ==);
+    width: 36px;
+    height: 36px;
+  }
+  
+  .leaflet-control-layers-expanded {
+    padding: 6px 10px 6px 6px;
+    color: #333;
+    background: #fff;
+  }
+  
+  .leaflet-control-layers-expanded .leaflet-control-layers-list {
+    display: block;
+    position: relative;
+  }
+  
+  .leaflet-control-layers-expanded .leaflet-control-layers-base,
+  .leaflet-control-layers-expanded .leaflet-control-layers-overlays {
+    display: block;
+  }
+  
+  .leaflet-control-layers-selector {
+    margin-top: 2ch;
+    position: relative;
+    top: 3px;
+  }
+  
+  .leaflet-control-layers label {
+    display: block;
+    margin-bottom: -317px;
+  }
+  
+  /* Add these new styles */
+  .leaflet-control-layers-selector {
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: checkbox;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .leaflet-control-layers label span {
+    vertical-align: middle;
+    margin-left: 5px;
+  }
