@@ -95,16 +95,52 @@ L.Icon.Default.mergeOptions({
 
 function PieActiveArc() {
   return (
-    <PieChart
-      series={[
-        {
-          data: pieData,
-          highlightScope: { faded: 'global', highlighted: 'item' },
-          faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
-        },
-      ]}
-      height={300}
-    />
+    <Box sx={{ position: 'relative', width: '120%', height: '400px', overflow: 'visible',
+      // Add margin-bottom to create space between pie chart and footer
+      marginBottom: '90px',
+      // Apply specific margin for mobile devices
+      '@media (max-width: 600px)': {
+        marginBottom: '90px', // Increase the margin on smaller screens
+      },
+    }}
+  >
+      <PieChart
+        series={[
+          {
+            data: pieData,
+            highlightScope: { faded: 'global', highlighted: 'item' },
+            faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
+            innerRadius: 30,
+            outerRadius: 100,
+            paddingAngle: 0.5,
+            cornerRadius: 5,
+            startAngle: -90,
+            endAngle: 270,
+          },
+        ]}
+        width={450}
+        height={400}
+        margin={{ top: 50, bottom: 50, left: 50, right: 180 }}
+        slotProps={{
+          legend: {
+            direction: 'column',
+            position: { vertical: 'middle', horizontal: 'right' },
+            padding: 4,
+          },
+        }}
+      >
+        <text
+          x={200}
+          y={30}
+          textAnchor="middle"
+          dominantBaseline="hanging"
+          fontSize="16"
+          fontWeight="bold"
+        >
+          Jumlah Faskes Kab. Semarang
+        </text>
+      </PieChart>
+    </Box>
   );
 }
 
@@ -349,16 +385,21 @@ function ShapefileLayer({ url }) {
 }
 
 function Peta() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = "https://static.elfsight.com/platform/platform.js";
     script.defer = true;
     script.dataset.useServiceCore = true;
     document.body.appendChild(script);
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
 
 
     return () => {
       document.body.removeChild(script);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -371,9 +412,9 @@ function Peta() {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
-      height: '330vh',
+      height: '310vh',
       boxSizing: 'border-box',
-      paddingBottom: '100rem'
+      paddingBottom: '127rem'
     }}>
       <Box display="flex" alignItems="center" mb={1}>
       <Typography variant="h4" sx={{ fontFamily: 'Be Vietnam Pro', marginBottom: '1rem', fontWeight: 'bold' }}>
@@ -446,8 +487,8 @@ function Peta() {
       </Box>
       <Card sx={{
         display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'flex-start',
+        flexDirection: { xs: 'column', md: 'row' },
+        alignItems: 'center',
         marginBottom: '2rem',
         backgroundImage: `url(${bgcardImage})`,
         backgroundSize: 'cover',
@@ -456,12 +497,13 @@ function Peta() {
       }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <BarChart
-              width={700}
-              height={400}
-              data={dataset}
-              margin={{
-                top: 20, right: 30, left: 20, bottom: 10,
+          <Box display="flex" justifyContent="center" alignItems="center" width="100%" overflow="auto">
+          <BarChart
+        width={Math.min(700, window.innerWidth - 40)}
+        height={400}
+        data={dataset}
+        margin={{
+          top: 20, right: 30, left: 20, bottom: 10,
               }}
             >
               <CartesianGrid strokeDasharray="3 3" />
@@ -473,6 +515,7 @@ function Peta() {
               <Bar dataKey="ungarantimur" fill="#82ca9d" name="Kecamatan Ungaran Timur" />
               <Bar dataKey="bawen" fill="#ffc658" name="Kecamatan Bawen" />
             </BarChart>
+            </Box>
           </Grid>
           <Grid item xs={12} md={6}>
             <Box display="flex" justifyContent="center" alignItems="center" height="100%">
