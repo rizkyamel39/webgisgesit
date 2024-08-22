@@ -473,7 +473,7 @@ function Peta() {
     • <a href="https://drive.google.com/file/d/13UOmP7LUWrGRPGipIEq4jjN9X8mcXSr4/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Peta Prevalensi Stunting Tingkat Kecamatan Ungaran Timur</a>
   </Typography>
   <Typography variant="body1" color="text.secondary" sx={{ fontFamily: 'Be Vietnam Pro', textAlign: 'justify' }}>
-    • <a href="https://drive.google.com/file/d/1d4s4J3tg7qANYAe7m3wVvdIqvbcCfhvJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Peta Prevalensi Stunting Tingkat Kecamatan Ungaran Bawen</a>
+    • <a href="https://drive.google.com/file/d/1d4s4J3tg7qANYAe7m3wVvdIqvbcCfhvJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Peta Prevalensi Stunting Tingkat Kecamatan Bawen</a>
   </Typography>
 </CardContent>
           </Grid>
